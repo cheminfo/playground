@@ -1,37 +1,34 @@
-# ABC
+# Playvround
 
-  [![NPM version][npm-image]][npm-url]
-  [![build status][travis-image]][travis-url]
-  [![Test coverage][codecov-image]][codecov-url]
-  [![David deps][david-image]][david-url]
-  [![npm download][download-image]][download-url]
-
-
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
+[![David deps][david-image]][david-url]
+[![npm download][download-image]][download-url]
 
 ## Installation
 
-`$ npm install ml-ABC`
+- Fork this project from github
+- Create the project
+- Make a pull request
 
-## [API Documentation](https://mljs.github.io/ABC/)
+## Goal
 
-## Example
+Create a library that will export 2 functions:
 
-```js
-const abc = require('ml-ABC');
-```
+### isPrimeNumber(number)
 
+Returns true / false depending if the number is prime of not
 
-## License
+- Should throw an error if the number is negative
+- Should have a coverage of 100%
 
-[MIT](./LICENSE)
+### getNthPrimeNumber(number)
 
-[npm-image]: https://img.shields.io/npm/v/ml-ABC.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/ml-ABC
-[travis-image]: https://img.shields.io/travis/mljs/ABC/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/mljs/ABC
-[codecov-image]: https://img.shields.io/codecov/c/github/mljs/ABC.svg?style=flat-square
-[codecov-url]: https://codecov.io/gh/mljs/ABC
-[david-image]: https://img.shields.io/david/mljs/ABC.svg?style=flat-square
-[david-url]: https://david-dm.org/mljs/ABC
-[download-image]: https://img.shields.io/npm/dm/ml-ABC.svg?style=flat-square
-[download-url]: https://www.npmjs.com/package/ml-ABC
+Returns the nth prime number. For example I would like to know
+what is the 100000th prime number. This is a good test for speed
+and thinking about algorithm improvement.
+
+## Some nice resources
+
+## [https://eloquentjavascript.net](https://eloquentjavascript.net/)

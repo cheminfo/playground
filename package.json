@@ -11,19 +11,14 @@
     "eslint-fix": "npm run eslint -- --fix",
     "test": "run-s testonly eslint",
     "test-travis": "eslint src && jest --coverage && codecov",
-    "testonly": "jest"
+    "testonly": "jest",
+    "coverage": "jest --coverage && codecov"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/cheminfo/playground.git"
   },
-  "keywords": [
-    "machine",
-    "learning",
-    "data",
-    "mining",
-    "datamining"
-  ],
+  "keywords": [],
   "author": "Luc Patiny <luc.patiny@epfl.ch>",
   "license": "MIT",
   "bugs": {
