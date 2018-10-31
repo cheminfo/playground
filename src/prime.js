@@ -14,25 +14,77 @@ function isPrime(n) {
 }
 
 function getNthPrime(n) {
+  var binSize = 1000000;
+  var numberOfBins = 50000;
+  var pi = require('./piarray');
+
   if (!isInteger(n)) throw new Error('n must be an integer');
   if (n <= 0) throw new Error('n must be greater than 0');
   if (n === 1) return 2;
-  var countPrimes = 1;
-  var imax = 2000000;
-  for (var i = 3; i < imax; i = i + 2) {
-    if (this.isPrime(i)) {
-      countPrimes++;
-      if (n === countPrimes) {
-        return i;
+
+  var binWhereIsn;
+  for (var bin = 0; bin < numberOfBins; bin++) {
+    if (pi[bin] >= n) {
+      binWhereIsn = bin;
+      break;
+    }
+  }
+
+  var lastOfBin = (binWhereIsn + 1) * binSize - 1;
+  var flags = [];
+  for (var it = 0; it < binSize; it++) {
+    flags[it] = false;
+  }
+
+  if (binWhereIsn === 0) {
+    flags[0] = true;
+    flags[1] = true;
+  }
+
+  var firstNumberOfBin = binWhereIsn * binSize;
+  for (var i = 2; i <= Math.sqrt(lastOfBin); i++) {
+    if (isPrime(i)) {
+      var aux = Math.floor(firstNumberOfBin / i); // get the floor
+      var firstMultipleOfiGreaterThanFirstNumberOfBin;
+      if (aux * i === firstNumberOfBin) {
+        firstMultipleOfiGreaterThanFirstNumberOfBin = aux * i;
+      } else {
+        firstMultipleOfiGreaterThanFirstNumberOfBin = aux * i + i;
+      }
+      for (var j = firstMultipleOfiGreaterThanFirstNumberOfBin - firstNumberOfBin; j < binSize; j += i) {
+        if (flags[j] === true) {
+          continue;
+        } else if (j + firstNumberOfBin !== i) {
+          flags[j] = true;
+        }
       }
     }
   }
-  throw new Error('The answer was not found, maximum iterations reached');
+
+  if (binWhereIsn === 0) {
+    j = 0;
+  } else {
+    j = pi[binWhereIsn - 1];
+  }
+
+  for (var l = 0; l < binSize; l++) {
+    if (flags[l] === false) {
+      j++;
+      if (j === n) {
+        return firstNumberOfBin + l;
+      }
+    }
+  }
+
+  throw new Error('The answer was not found');
 }
 
 function isInteger(number) {
   return Math.round(number) === number;
 }
+
+console.log(getNthPrime(450000000));
+
 
 module.exports.isPrime = isPrime;
 module.exports.getNthPrime = getNthPrime;

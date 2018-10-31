@@ -51,10 +51,4 @@ describe('test prime', () => {
   it('Find the 100000 prime number', () => {
     expect(prime.getNthPrime(100000)).toBe(1299709);
   });
-
-  it('iterations limit', function () {
-    expect(function () {
-      prime.getNthPrime(250000);
-    }).toThrowError('The answer was not found, maximum iterations reached');
-  });
 });
