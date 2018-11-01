@@ -12,7 +12,7 @@ describe('test prime', () => {
   it('check negative numbers', function () {
     expect(function () {
       prime.isPrime(-50);
-    }).toThrowError('Must be an non negative value');
+    }).toThrowError('Must be an integer non negative value');
   });
 
   it('check if 0 is prime', () => {
