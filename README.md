@@ -26,3 +26,5 @@ and thinking about algorithm improvement.
 ## Some nice resources
 
 ## [https://eloquentjavascript.net](https://eloquentjavascript.net/)
+
+https://raw.githubusercontent.com/frontarm/async-javascript-cheatsheet/master/async-cheatsheet.png
