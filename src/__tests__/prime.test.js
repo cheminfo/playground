@@ -29,8 +29,17 @@ describe('test prime', () => {
   it('check if 2 is prime', () => {
     expect(prime.isPrime(2)).toBe(true);
   });
+
   it('check if 1299709 is prime', () => {
     expect(prime.isPrime(1299709)).toBe(true);
+  });
+
+  it('check if 49999999967 is prime', () => {
+    expect(prime.isPrime(49999999967)).toBe(true);
+  });
+
+  it('check if 49999999963 is prime', () => {
+    expect(prime.isPrime(49999999963)).toBe(false);
   });
 
   it('in getNthPrime n is not integer', function () {
@@ -48,7 +57,17 @@ describe('test prime', () => {
     expect(prime.getNthPrime(1)).toBe(2);
   });
 
-  it('Find the 100000 prime number', () => {
-    expect(prime.getNthPrime(100000)).toBe(1299709);
+  it('Find the 50th prime number (prime number in first bin)', () => {
+    expect(prime.getNthPrime(50)).toBe(229);
+  });
+
+  it('Find the 2119654578th prime number (last prime number allowed)', () => {
+    expect(prime.getNthPrime(2119654578)).toBe(49999999967);
+  });
+
+  it('Find the 2119654579th prime number', function () {
+    expect(function () {
+      prime.getNthPrime(2119654579);
+    }).toThrowError('The answer was not found');
   });
 });
