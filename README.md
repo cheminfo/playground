@@ -27,4 +27,26 @@ and thinking about algorithm improvement.
 
 ## [https://eloquentjavascript.net](https://eloquentjavascript.net/)
 
+## Installing developement environment
+
+- Install `nvm`
+- `nvm install stable`
+- Install `vscode`
+- Install vscode plugins:
+  - eslint
+  - prettier
+  - liveserver
+  - Bracket Pir Coloring
+  - Code Spell Checker
+  - GitHub Pull Requests
+  - GitLens
+  - Markdown Preview
+  - Settings Sync (if you work on many computers)
+  - VS live share (allows to share your code)
+- change settings in vscode
+
+  - "files.autoSave": "onFocusChange"
+  - "prettier.eslintIntegration": true,
+  - "editor.formatOnSave": true
+
 https://raw.githubusercontent.com/frontarm/async-javascript-cheatsheet/master/async-cheatsheet.png
